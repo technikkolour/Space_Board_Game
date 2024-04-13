@@ -6,7 +6,7 @@ public class SC_SnakeGameGenerator : MonoBehaviour
     //Game area resolution, the higher number means more blocks
     public int areaResolution = 22;
     //Snake movement speed
-    public float snakeSpeed = 0.5f;
+    public float snakeSpeed = 40;
     //Main Camera
     public Camera mainCamera;
     //Materials
@@ -29,6 +29,7 @@ public class SC_SnakeGameGenerator : MonoBehaviour
     //Game status
     bool gameStarted = false;
     bool gameOver = false;
+    bool won = false;
     //Camera scaling
     Bounds targetBounds;
     //Text styling
@@ -134,6 +135,7 @@ public class SC_SnakeGameGenerator : MonoBehaviour
                 ApplyMaterials();
                 gameOver = false;
                 gameStarted = false;
+                won = false;
             }
         }
         else
@@ -206,6 +208,13 @@ public class SC_SnakeGameGenerator : MonoBehaviour
                         snakeCoordinates[0] = newCoordinate;
                         gameBlocks[snakeCoordinates[0]].transform.localEulerAngles = new Vector3(90, (snakeDirection == Direction.Down ? 180 : 0), 0);
                     }
+                }
+
+                if (totalPoints >= 5)
+                {
+                    gameOver = true;
+                    won = true;
+                    return;
                 }
 
                 ApplyMaterials();
@@ -339,9 +348,15 @@ public class SC_SnakeGameGenerator : MonoBehaviour
         {
             GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 10, 200, 20), "Press Any Key to Play\n(Use Arrows to Change Direction)", mainStyle);
         }
-        if (gameOver)
+        if (gameOver && !won)
         {
             GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 20, 200, 40), "Game Over\n(Press 'Space' to Restart)", mainStyle);
         }
+
+        else if (gameOver && won)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 20, 200, 40), "Success!! You have collected all the diamonds!\n(Press 'Space' to Restart)", mainStyle);
+        }
+
     }
 }
