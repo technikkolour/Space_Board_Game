@@ -4,35 +4,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Rigidbody2D rb;
+    public float moveSpeed = 100.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Fetch the Rigidbody from the GameObject with this script attached
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation.Normalize();
-        Move();
-    }
+        // Input from arrow keys
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-    public void Move()
-    {
-        
-            int speed = 100;
+        // Movement calculation
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * moveSpeed*20 * Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-                transform.Translate(Vector2.right * speed *2* Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-                transform.Translate(Vector2.left * speed * 2 * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-                transform.Translate(Vector2.up * speed * 2 * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-                transform.Translate(Vector2.down * speed * 2 * Time.deltaTime);
-           
-
+        // Apply movement to Rigidbody
+        rb.MovePosition(rb.position + (Vector2)movement);
     }
         
 }
