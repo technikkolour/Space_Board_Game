@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 1112492250}
   - component: {fileID: 1112492249}
   - component: {fileID: 1112492251}
+  - component: {fileID: 1112492251}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -1110,9 +1111,10 @@ GameObject:
   - component: {fileID: 1112947822}
   - component: {fileID: 1112947821}
   - component: {fileID: 1112947823}
+  - component: {fileID: 1112947823}
   m_Layer: 0
   m_Name: pixil-frame-0_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1597,8 +1599,9 @@ GameObject:
   - component: {fileID: 1634149865}
   - component: {fileID: 1634149864}
   - component: {fileID: 1634149863}
-  - component: {fileID: 1634149867}
   - component: {fileID: 1634149866}
+  - component: {fileID: 1634149867}
+  - component: {fileID: 1634149868}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1619,6 +1622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  canMove: 1
+  initPosAstronaut: {x: 0, y: 0}
 --- !u!212 &1634149864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1713,8 +1718,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1634149867
-BoxCollider2D:
+--- !u!70 &1634149867
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1746,18 +1751,20 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 5, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5}
-  m_EdgeRadius: 0
+  m_Size: {x: 3, y: 5}
+  m_Direction: 0
+--- !u!114 &1634149868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634149862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834a3389c0f27934b897eb3e71c5c908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653078811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,9 +1776,10 @@ GameObject:
   - component: {fileID: 1653078813}
   - component: {fileID: 1653078812}
   - component: {fileID: 1653078814}
+  - component: {fileID: 1653078814}
   m_Layer: 0
   m_Name: pixil-frame-0_1 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2126,9 +2134,10 @@ GameObject:
   - component: {fileID: 1738551334}
   - component: {fileID: 1738551333}
   - component: {fileID: 1738551335}
+  - component: {fileID: 1738551335}
   m_Layer: 0
   m_Name: pixil-frame-0_2 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2610,9 +2619,10 @@ GameObject:
   - component: {fileID: 1979803265}
   - component: {fileID: 1979803264}
   - component: {fileID: 1979803266}
+  - component: {fileID: 1979803266}
   m_Layer: 0
   m_Name: pixil-frame-0_2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
