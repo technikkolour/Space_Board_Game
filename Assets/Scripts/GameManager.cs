@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI field;
+    string MiniGameScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +42,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TakeAPeek(string sceneName)
+    public void UpdateFact(string FunFact, bool HasMinigame, string minigameName)
     {
-        SceneManager.LoadScene(sceneName);
+        field.SetText(FunFact);
+        if (HasMinigame)
+        {
+            MiniGameScene = minigameName;
+        }
+        
     }
+
+    public void TakeAPeek()
+    {
+        SceneManager.LoadScene(MiniGameScene);
+    }
+
 }

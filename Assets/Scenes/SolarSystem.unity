@@ -335,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378289901}
   - component: {fileID: 378289902}
+  - component: {fileID: 378289904}
   - component: {fileID: 378289903}
   m_Layer: 0
   m_Name: Earth
@@ -455,6 +456,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &378289904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378289900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Earth is special because it has air and water, and it''s where
+    all of us live!'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &463450219
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 463450220}
   - component: {fileID: 463450221}
+  - component: {fileID: 463450223}
   - component: {fileID: 463450222}
   m_Layer: 0
   m_Name: Mercury
@@ -585,6 +603,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &463450223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463450219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Mercury is the smallest planet and zooms around the Sun super
+    quick, in just 88 days!'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &499432780
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +785,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509287289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 664758315}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: TakeAPeek
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509287289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543902701}
   - component: {fileID: 543902702}
+  - component: {fileID: 543902704}
   - component: {fileID: 543902703}
   m_Layer: 0
   m_Name: Uranus
@@ -920,6 +967,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &543902704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543902700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Uranus spins on its side and is a pretty blue color.'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &583968452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1112,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6736926, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &664758314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664758316}
+  - component: {fileID: 664758315}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &664758315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664758314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc6a9459e214694182cc5dc2dd1d5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: {fileID: 1052974511}
+--- !u!4 &664758316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664758314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.779408, y: -2.3036923, z: 0.8722777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674789952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 674789953}
   - component: {fileID: 674789954}
+  - component: {fileID: 674789956}
   - component: {fileID: 674789955}
   m_Layer: 0
   m_Name: Venus
@@ -1180,6 +1288,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 40}
   m_EdgeRadius: 0
+--- !u!114 &674789956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674789952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Venus is really, really hot, even hotter than your oven! On
+    its surface you can find lava and even witness acid rain!'
+  HasMinigame: 1
+  MiniGameName: Maze
 --- !u!1 &910292257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910292258}
   - component: {fileID: 910292259}
+  - component: {fileID: 910292260}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -1264,6 +1389,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &910292260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910292257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &957753300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957753301}
   - component: {fileID: 957753302}
+  - component: {fileID: 957753304}
   - component: {fileID: 957753303}
   m_Layer: 0
   m_Name: Neptune
@@ -1394,6 +1535,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &957753304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957753300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Far, far away: Neptune is the farthest planet from the Sun
+    and has super strong winds.'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &1052974509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,8 +1608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Fun Fact: The Earth is the only planet capable of sustaining life in our
-    galaxy.'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d0c6b9882fe964e8677b1b536c960d, type: 2}
   m_sharedMaterial: {fileID: -2228996171512174180, guid: 15d0c6b9882fe964e8677b1b536c960d, type: 2}
@@ -1539,6 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152337074}
   - component: {fileID: 1152337075}
+  - component: {fileID: 1152337077}
   - component: {fileID: 1152337076}
   m_Layer: 0
   m_Name: Jupiter
@@ -1659,6 +1816,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1152337077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152337073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Jupiter is the biggest planet and has a huge storm called the
+    Great Red Spot.'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &1195144178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284498296}
   - component: {fileID: 1284498297}
+  - component: {fileID: 1284498299}
   - component: {fileID: 1284498298}
   m_Layer: 0
   m_Name: Mars
@@ -1919,6 +2093,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &1284498299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284498295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Mars looks red and has the biggest volcano and the biggest
+    dust storms!'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &1318583953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,10 +2280,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 0.26597092, y: 0.52091193, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1480191736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413561265
 GameObject:
@@ -2122,7 +2312,7 @@ Transform:
   m_GameObject: {fileID: 1413561265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.0308, y: 2.6436, z: 0.1946077}
+  m_LocalPosition: {x: 62.25, y: 2.62, z: 0.1946077}
   m_LocalScale: {x: 0.3217, y: 10.612895, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2448,7 +2638,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.26597092, y: 0.26045597, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1319902868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1480191737
@@ -2508,7 +2699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834a3389c0f27934b897eb3e71c5c908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 664758315}
 --- !u!50 &1480191739
 Rigidbody2D:
   serializedVersion: 4
@@ -2630,6 +2821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621629110}
   - component: {fileID: 1621629111}
+  - component: {fileID: 1621629113}
   - component: {fileID: 1621629112}
   m_Layer: 0
   m_Name: Saturn
@@ -2750,6 +2942,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &1621629113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621629109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffd546be7484cc4c8f03699a9ecdf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FunFact: 'Fun Fact: Saturn has shiny rings around it and lots of moons.'
+  HasMinigame: 0
+  MiniGameName: 
 --- !u!1 &2027697925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,8 +3088,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 253135798}
-  - {fileID: 1319902868}
   - {fileID: 1480191736}
   - {fileID: 1438816051}
   - {fileID: 2057782417}
   - {fileID: 1416705890}
+  - {fileID: 664758316}

@@ -140,5 +140,18 @@ public class PlayerBehaviour : MonoBehaviour
             SceneManager.LoadScene("Maze");
         else if (SceneManager.GetActiveScene().name == "Maze")
             SceneManager.LoadScene("SolarSystem");
+
+        if (SceneManager.GetActiveScene().name == "SolarSystem")
+        {
+            string minigame = "";
+            string fact = GameObject.Find(col.gameObject.name).GetComponent<Planet>().FunFact;
+            bool hasMG = GameObject.Find(col.gameObject.name).GetComponent<Planet>().HasMinigame;
+
+            if (hasMG) 
+                minigame = GameObject.Find(col.gameObject.name).GetComponent<Planet>().MiniGameName; 
+
+            gameManager.UpdateFact(fact, hasMG, minigame);
+        }
+ 
     }
 }
