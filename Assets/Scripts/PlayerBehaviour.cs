@@ -12,26 +12,6 @@ public class PlayerBehaviour : MonoBehaviour
     bool gameOver = false;
     bool gameStarted = false;
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the collision is with the sprite you want to detect
-        if (collision.gameObject.CompareTag("Finish"))
-        {
-            // You can put your success code here
-            // For example, you can set a variable to indicate success, load a new scene, etc.
-            playerWon = true;
-
-        }
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            // You can put your success code here
-            // For example, you can set a variable to indicate success, load a new scene, etc.
-            playerWon = false;
-            gameOver = true;
-
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +25,9 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (currentLevel == "SolarSystem")
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.RightArrow))
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         else if (currentLevel == "Take Off")
@@ -93,6 +73,26 @@ public class PlayerBehaviour : MonoBehaviour
         mainStyle.normal.textColor = Color.black;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with the sprite you want to detect
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            // You can put your success code here
+            // For example, you can set a variable to indicate success, load a new scene, etc.
+            playerWon = true;
+
+        }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            // You can put your success code here
+            // For example, you can set a variable to indicate success, load a new scene, etc.
+            playerWon = false;
+            gameOver = true;
+
+        }
+    }
+
     void OnGUI()
     {
         if (playerWon)
@@ -133,6 +133,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        gameManager.LoadNextScene();
+        if (SceneManager.GetActiveScene().name == "Take Off")
+            gameManager.LoadNextScene();
+
+        if (SceneManager.GetActiveScene().name == "Maze" && GameObject.Find(col.gameObject.name).GetComponent<Hazard>() != null)
+            SceneManager.LoadScene("Maze");
+        else if (SceneManager.GetActiveScene().name == "Maze")
+            SceneManager.LoadScene("SolarSystem");
     }
 }

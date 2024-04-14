@@ -37,4 +37,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("SolarSystem");
         }
     }
+
+    public void TakeAPeek(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
