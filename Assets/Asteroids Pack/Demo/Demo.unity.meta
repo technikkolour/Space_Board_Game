@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Asteroids Pack/Demo/Demo.unity.meta
 guid: 546887f03109d0a4b98cdc3eafa67148
 timeCreated: 1489020740
 licenseType: Store
+=======
+guid: 501de020d278c46839395e0bf2788ffb
+>>>>>>> 42900e4def703dc5620b6c48d85a4f149bebb76a:Assets/Scenes/SampleScene.unity.meta
 DefaultImporter:
   userData: 
   assetBundleName: 
