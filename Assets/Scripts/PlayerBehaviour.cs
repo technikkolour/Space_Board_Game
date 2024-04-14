@@ -111,6 +111,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Stop the sprite's movement
         spriteMovement?.StopMovement();
 
+        gameManager.LoadNextScene();
+
     }
 
     void RestartGame()

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI field;
+    public Button PeekButton;
+
     string MiniGameScene;
 
     // Start is called before the first frame update
@@ -47,9 +50,11 @@ public class GameManager : MonoBehaviour
         field.SetText(FunFact);
         if (HasMinigame)
         {
+            PeekButton.gameObject.SetActive(true);
             MiniGameScene = minigameName;
         }
-        
+        else PeekButton.gameObject.SetActive(false);
+
     }
 
     public void TakeAPeek()
