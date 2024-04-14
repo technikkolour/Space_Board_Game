@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Take Off.unity
+    guid: 46a091ede65031c4c9f112325d47f2ec
+  - enabled: 1
+    path: Assets/Scenes/SolarSystem.unity
+    guid: a684e401fa51a944583d8c8f6e4e1fe6
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: b1a58c4bf40e64c5982df8f18a62ca94
+  - enabled: 1
+    path: Assets/Scenes/SnakeDiamondGame.unity
+    guid: 8d26184a06fec154fbbd17f3e72911ba
   m_configObjects: {}
